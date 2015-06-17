@@ -1,0 +1,23 @@
+Summary:
+While Xcode is able to link dynamic frameworks that are products of subprojects in the same xcodeproj file as the target, it fails to do so if the frameworks have been precompiled and then added to the project. Hence Xcode does not find the module when trying to import it. 
+Note that it does not work for any target, neither the testing targets nor the actual app target.
+
+Steps to Reproduce:
+1. Decompress XcodeLinkingBug
+2. Try compile the App.xcodeproj
+
+Expected Results:
+The Framework.framework is properly linked against the App target and imports successfully. The invocation of the function named "helloTest" should not yield an error.
+
+Actual Results:
+The module "Framework" is not found. The code does not compile.
+
+Version:
+Xcode Version 7.0 beta (7A120f)
+OSX Yosemite Version 10.10.3 (14D136)
+
+Notes:
+
+
+Configuration:
+This does not occur in Xcode Version 6.3.1 (6D1002).
