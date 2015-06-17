@@ -1,0 +1,20 @@
+UI tests can't tap on regular UIView
+
+Summary:
+See example app. A regular UIView exposed to UIAccessibility with userInteraction enabled can't be tapped. While this makes little sense in this example, it does make sense in actual apps that have a UITapGestureRecognizer assigned to the view.
+
+Steps to Reproduce:
+1. Download example project
+2. Decompress example project
+3. Run UI test of example project
+
+
+Expected Results:
+The test passes. The XCUIElement should exist and should be tappable.
+
+Actual Results:
+The test fails. The XCUIElement exists but is not tappable.
+
+Version:
+Xcode Version 7.0 beta (7A120f)
+OSX Yosemite Version 10.10.3 (14D136)
